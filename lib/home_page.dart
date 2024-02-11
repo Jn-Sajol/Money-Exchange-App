@@ -1,10 +1,41 @@
 import 'package:flutter/material.dart';
 
-class HomePage extends StatelessWidget {
+// class Home extends StatefulWidget{
+//   const Home({super.key});
+//   @override
+//   State<Home> createState()=> _Home();
+// }
+//
+// class _Home extends State<Home>{
+//   @override
+//   Widget build(BuildContext context){
+//     return Scaffold(
+//
+//     )
+//   }
+// }
+
+class HomePage extends StatefulWidget {
   const HomePage({super.key});
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  var textEditingController = TextEditingController();
+  double result = 0;
+   void calculation(){
+     result =double.parse(textEditingController.text) * 100;
+    setState(() {});
+  }
+
+
   @override
   Widget build(BuildContext context) {
+     print(result);
     return Scaffold(
+      backgroundColor: Colors.grey,
       appBar: AppBar(
         title: const Text('app abr'),
         backgroundColor: Colors.teal,
@@ -16,19 +47,20 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
-              '0',
-              style: TextStyle(
+             Text(
+              result.toString(),
+              style:const TextStyle(
                 color: Colors.black45,
                 fontWeight: FontWeight.w800,
                 fontSize: 66,
               ),
             ),
-            const TextField(
-              style: TextStyle(
-                color: Colors.black,
+             TextField(
+              controller:textEditingController,
+              style: const TextStyle(
+               color: Colors.black,
               ),
-              decoration: InputDecoration(
+              decoration:const  InputDecoration(
                 filled: true,
                 fillColor: Colors.red,
                 hintText: 'Enter a amount',
@@ -43,9 +75,7 @@ class HomePage extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8),
               child: TextButton(
-                onPressed: () {
-                  debugPrint('hello');
-                },
+                onPressed: calculation,
                 style: const ButtonStyle(
                     // textStyle: MaterialStatePropertyAll(TextStyle(
                     //   color: Colors.red,
@@ -55,8 +85,10 @@ class HomePage extends StatelessWidget {
                         MaterialStatePropertyAll(Colors.lightBlueAccent),
                     padding: MaterialStatePropertyAll(
                         EdgeInsets.fromLTRB(4, 3, 3, 3)),
-                    fixedSize: MaterialStatePropertyAll(Size(500, 50))),
-                child: Text('Explore',style:TextStyle(color: Colors.deepOrange),),
+                    fixedSize: MaterialStatePropertyAll(Size(500, 50),
+                    ),
+                ),
+                child:const Text('Explore',style:TextStyle(color: Colors.deepOrange),),
               ),
             ),
           ],

@@ -33,11 +33,12 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-     print(result);
+     // print(result);
     return Scaffold(
       backgroundColor: Colors.grey,
       appBar: AppBar(
-        title: const Text('app abr'),
+        title: const Text('Money Exchange App'),
+        centerTitle: true,
         backgroundColor: Colors.teal,
       ),
       drawer: const Drawer(

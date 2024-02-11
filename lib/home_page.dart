@@ -40,21 +40,24 @@ class HomePage extends StatelessWidget {
               ),
               keyboardType: TextInputType.number,
             ),
-            TextButton(
-              onPressed: () {
-                debugPrint('hello');
-              },
-              style: const ButtonStyle(
-                  textStyle: MaterialStatePropertyAll(TextStyle(
-                    color: Colors.red,
-                    // fontSize: 54,
-                  )),
-                  backgroundColor:
-                      MaterialStatePropertyAll(Colors.lightBlueAccent),
-                  padding:
-                      MaterialStatePropertyAll(EdgeInsets.fromLTRB(4, 3, 3, 3)),
-                  fixedSize: MaterialStatePropertyAll(Size(500, 40))),
-              child: Text('Explore'),
+            Padding(
+              padding: const EdgeInsets.all(8),
+              child: TextButton(
+                onPressed: () {
+                  debugPrint('hello');
+                },
+                style: const ButtonStyle(
+                    // textStyle: MaterialStatePropertyAll(TextStyle(
+                    //   color: Colors.red,
+                    //   // fontSize: 54,
+                    // )),
+                    backgroundColor:
+                        MaterialStatePropertyAll(Colors.lightBlueAccent),
+                    padding: MaterialStatePropertyAll(
+                        EdgeInsets.fromLTRB(4, 3, 3, 3)),
+                    fixedSize: MaterialStatePropertyAll(Size(500, 50))),
+                child: Text('Explore',style:TextStyle(color: Colors.deepOrange),),
+              ),
             ),
           ],
         ),

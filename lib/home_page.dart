@@ -12,7 +12,7 @@ class HomePage extends StatelessWidget {
       drawer: const Drawer(
         child: Text('dhaka'),
       ),
-      body:  Center(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
@@ -44,18 +44,18 @@ class HomePage extends StatelessWidget {
               onPressed: () {
                 debugPrint('hello');
               },
-              style:const ButtonStyle(
-                textStyle: MaterialStatePropertyAll(
-                    TextStyle(
-                        color:Colors.red,
-                      // fontSize: 54,
-                    )
-                ),
-                backgroundColor: MaterialStatePropertyAll(Colors.lightBlueAccent)
-              ),
+              style: const ButtonStyle(
+                  textStyle: MaterialStatePropertyAll(TextStyle(
+                    color: Colors.red,
+                    // fontSize: 54,
+                  )),
+                  backgroundColor:
+                      MaterialStatePropertyAll(Colors.lightBlueAccent),
+                  padding:
+                      MaterialStatePropertyAll(EdgeInsets.fromLTRB(4, 3, 3, 3)),
+                  fixedSize: MaterialStatePropertyAll(Size(500, 40))),
               child: Text('Explore'),
             ),
-
           ],
         ),
       ),

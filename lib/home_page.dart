@@ -63,7 +63,7 @@ class _HomePageState extends State<HomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              result.toString(),
+            ('BDT $result'),
               style: const TextStyle(
                 color: Colors.black45,
                 fontWeight: FontWeight.w800,
